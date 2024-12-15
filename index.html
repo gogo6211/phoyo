@@ -1,0 +1,45 @@
+---
+layout: default
+---
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+        <h1><a href="index.html"><strong>Hope Thanksgiving</strong> Hope Thanksgiving photos</a></h1>
+        <nav>
+            <ul>
+                <li><a href="#footer" class="icon fa-info-circle">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main -->
+    <div id="main" data-exif='{{ site.exif }}'>
+        {% for image in site.static_files %}
+        {% if image.path contains 'fulls' %}
+        <article class="thumb">
+            <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" class="image">
+                <img src="{{ site.baseurl }}{{ site.image_thumbs_loc }}/{{ image.name }}" alt=""
+                     data-name="{{ image.name }}"/></a>
+            <!--<h2></h2>
+            <p></p>-->
+        </article>
+        {% endif %}
+        {% endfor %}
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer" class="panel">
+        <div class="inner split">
+            <div>
+                <section>
+                    <h2>Hi</h2>
+                    <p>Sorry this took a while, have been bussy with school and finals</p>
+                    <p>To request a removal of a photo send an email to <a href="mailto:contact@hopethanksgiving.com" target="_blank">contact@hopethanksgiving.com</a> with a screenshot of the image.</p>
+                </section>
+            </div>
+        </div>
+    </footer>
+</div>
